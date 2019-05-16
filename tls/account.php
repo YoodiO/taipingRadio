@@ -14,7 +14,7 @@ class account {
             setcookie( 'username', $username, time() + 3600, "/", true );
             return ( true );
         } else {
-            reset( false );
+            return( false );
         }
     }
 }
