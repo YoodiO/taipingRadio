@@ -19,7 +19,7 @@
 <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">广播室</a>
+                <a class="navbar-brand" href="/">广播室</a>
             </div>
         </div>
     </nav>
