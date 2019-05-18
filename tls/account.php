@@ -1,9 +1,7 @@
 <?php
 include( 'conn.php' );
 class account {
-    private $realname;
-    private $classname;
-    static function reg( $username, $password, $realname, $classname ) {
+    static function reg( $username, $password, $realname, $classname,$confirmpassword ) {
         if ( $conn->query( "INSERT INTO users(username,password,realname,classname) VALUES($username,$password,$realname,$classname)" ) ) {
             return ( true );
         } else {

@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>taipingRadio</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- 引入 Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
     <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -16,35 +16,55 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">广播室</a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <?php if(isset($_COOKIE["username"])){?>
-                <?php }else{?>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a>
-                </li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a>
-                </li>
-                <?php }?>
-            </ul>
-        </div>
+    <!--header.php-->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="/">广播室</a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register">注册</button>
+            </li>
+        </ul>
     </nav>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h1>开发进度</h1>
-            <div class="progress progress-striped active">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-                    <span class="sr-only"></span>
+    <!--注册模态框-->
+    <form action="account/account/register.php">
+        <div class="modal fade" id="register">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <!-- 模态框头部 -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">注册</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- 模态框主体 -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>账号:</label>
+                            <input type="text" class="form-control" id="username" placeholder="输入用户名。">
+                        </div>
+                        <div class="form-group">
+                            <label>密码:</label>
+                            <input type="text" class="form-control" id="password" placeholder="输入密码。">
+                        </div>
+                        <div class="form-group">
+                            <label>确认密码:</label>
+                            <input type="text" class="form-control" id="confirmPassword" placeholder="请再次输入密码。">
+                        </div>
+                    </div>
+
+                    <!-- 模态框底部 -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success">提交</button>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <!-- 包括所有已编译的插件 -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
