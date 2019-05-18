@@ -20,8 +20,12 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="/">广播室</a>
         <ul class="navbar-nav">
-            <li class="nav-item"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register">注册</button>
-            </li>
+            <?php if(!isset($_COOKIE["userName"])){?>
+            <li class="nav-item"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button</li>
+            <li class="nav-item"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button</li>
+            <?php }else{?>
+            <li class="nav-item"></li>
+            <?php }?>
         </ul>
     </nav>
     <!--注册模态框-->
