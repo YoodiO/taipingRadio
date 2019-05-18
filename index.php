@@ -40,23 +40,52 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>账号:</label>
-                            <input type="text" class="form-control" id="username" placeholder="输入用户名。">
+                            <input type="text" class="form-control" id="userName" placeholder="输入用户名。">
                         </div>
                         <div class="form-group">
                             <label>密码:</label>
-                            <input type="text" class="form-control" id="password" placeholder="输入密码。">
+                            <input type="text" class="form-control" id="passWord" placeholder="输入密码。">
                         </div>
                         <div class="form-group">
                             <label>确认密码:</label>
-                            <input type="text" class="form-control" id="confirmPassword" placeholder="请再次输入密码。">
+                            <input type="text" class="form-control" id="confirmPassword" placeholder="再次输入密码。">
+                        </div>
+                        <div class="form-group">
+                            <label>真实姓名:</label>
+                            <input type="text" class="form-control" id="realName" placeholder="输入姓名。">
+                        </div>
+                        <div class="form-group">
+                            <label>班级:</label>
+                            <input type="text" class="form-control" id="className" placeholder="输入班级。">
                         </div>
                     </div>
 
                     <!-- 模态框底部 -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success">提交</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Return" data-dismiss="modal">提交</button>
                     </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="Return">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
 
+                    <!-- 模态框头部 -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Return</h4>
+                    </div>
+                    
+                    <!-- 模态框主体 -->
+                    <div class="modal-body">
+                    </div>
+                    
+                    <!-- 模态框底部 -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">确定</button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
