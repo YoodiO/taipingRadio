@@ -29,75 +29,77 @@
         </ul>
     </nav>
     <!--注册模态框-->
-    <form action="account/account/register.php">
+    <form id="registerForm" action="/account/register.php">
         <div class="modal fade" id="register">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
 
-                    <!-- 模态框头部 -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">注册</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- 模态框主体 -->
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>账号:</label>
-                            <input type="text" class="form-control" id="userName" placeholder="输入用户名。">
-                        </div>
-                        <div class="form-group">
-                            <label>密码:</label>
-                            <input type="text" class="form-control" id="passWord" placeholder="输入密码。">
-                        </div>
-                        <div class="form-group">
-                            <label>确认密码:</label>
-                            <input type="text" class="form-control" id="confirmPassword" placeholder="再次输入密码。">
-                        </div>
-                        <div class="form-group">
-                            <label>真实姓名:</label>
-                            <input type="text" class="form-control" id="realName" placeholder="输入姓名。">
-                        </div>
-                        <div class="form-group">
-                            <label>班级:</label>
-                            <input type="text" class="form-control" id="className" placeholder="输入班级。">
-                        </div>
-                    </div>
-
-                    <!-- 模态框底部 -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Return" data-dismiss="modal">提交</button>
-                    </div>
-                    
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">注册</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-            </div>
-        </div>
-        <div class="modal fade" id="Return">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
 
-                    <!-- 模态框头部 -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Return</h4>
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>账号:</label>
+                        <input type="text" class="form-control" id="userName" placeholder="输入用户名。">
                     </div>
-                    
-                    <!-- 模态框主体 -->
-                    <div class="modal-body">
+                    <div class="form-group">
+                        <label>密码:</label>
+                        <input type="text" class="form-control" id="passWord" placeholder="输入密码。">
                     </div>
-                    
-                    <!-- 模态框底部 -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">确定</button>
+                    <div class="form-group">
+                        <label>确认密码:</label>
+                        <input type="text" class="form-control" id="confirmPassword" placeholder="再次输入密码。">
                     </div>
-                    
+                    <div class="form-group">
+                        <label>真实姓名:</label>
+                        <input type="text" class="form-control" id="realName" placeholder="输入姓名。">
+                    </div>
+                    <div class="form-group">
+                        <label>班级:</label>
+                        <input type="text" class="form-control" id="className" placeholder="输入班级。">
+                    </div>
                 </div>
-            </div>
-        </div>
-    </form>
-    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <!-- 包括所有已编译的插件 -->
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" data-toggle="modal" id="registerButton">提交</button>
+                </div>
+
+                </div>
+                </div>
+                </div>
+                </form>
+
+                <div class="modal fade" id="Return">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Return</h4>
+                            </div>
+
+                            <!-- 模态框主体 -->
+                            <div class="modal-body" id="returnMsg">
+                            </div>
+
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">确定</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+                <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+                <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                <!-- 包括所有已编译的插件 -->
+                <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
