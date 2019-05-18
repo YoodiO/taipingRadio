@@ -29,7 +29,7 @@
         </ul>
     </nav>
     <!--注册模态框-->
-    <form id="registerForm" action="/account/register.php">
+    <form id="registerForm" method="post" action="/account/register.php">
         <div class="modal fade" id="register">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
