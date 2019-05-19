@@ -1,6 +1,6 @@
 <!doctype html>
 <?php
-date_default_timezone_set("Asia/Shanghai");
+date_default_timezone_set( "Asia/Shanghai" );
 include( '../tls/conn.php' );
 $vote_id = $_GET[ 'vote_id' ];
 if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" ) ) {
@@ -34,36 +34,106 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                 <strong>警告!</strong> 最多只能选择五个哦~
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['one'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="1" name="checkBox[]"><?php echo $row['one'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['two'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="2" name="checkBox[]"><?php echo $row['two'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['three'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="3" name="checkBox[]"><?php echo $row['three'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['four'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="4" name="checkBox[]"><?php echo $row['four'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['five'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="5" name="checkBox[]"><?php echo $row['five'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['six'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="6" name="checkBox[]"><?php echo $row['six'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['seven'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="7" name="checkBox[]"><?php echo $row['seven'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['eight'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="8" name="checkBox[]"><?php echo $row['eight'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['nine'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="9" name="checkBox[]"><?php echo $row['nine'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
             <div class="card bg-light text-dark">
-                <div class="card-body"><?php echo $row['ten'];?></div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="10" name="checkBox[]"><?php echo $row['ten'];?>
+                          </label>
+                    
+                    </div>
+                </div>
             </div>
-            <br />
+            <br/>
             <button type="button" class="btn btn-success btn-block">投票(制作中)</button>
             <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
             <?php }else{?>
