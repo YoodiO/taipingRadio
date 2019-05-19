@@ -16,166 +16,19 @@
 </head>
 
 <body>
-    <?php session_start();?>
-    <!--header.php-->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <a class="navbar-brand" href="/">广播室</a>
-        <ul class="navbar-nav">
-            <?php if(isset($_SESSION["userName"])){?>
-            <li class="nav-item"><?php echo($_SESSION["userName"]);?></li>
-            <?php }else{?>
-            <li class="nav-item"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button</li>
-            <li class="nav-item"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button</li>
-            <?php }?>
-        </ul>
-    </nav>
-    <!--注册模态框-->
-    <div class="modal fade" id="register">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-
-                <!-- 模态框头部 -->
-                <div class="modal-header">
-                    <h4 class="modal-title">注册</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- 模态框主体 -->
-                <form id="registerForm">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>账号:</label>
-                            <input type="text" class="form-control" name="userName" placeholder="输入用户名。">
-                        </div>
-                        <div class="form-group">
-                            <label>密码:</label>
-                            <input type="password" class="form-control" name="passWord" placeholder="输入密码。">
-                        </div>
-                        <div class="form-group">
-                            <label>确认密码:</label>
-                            <input type="password" class="form-control" name="confirmPassword" placeholder="再次输入密码。">
-                        </div>
-                        <div class="form-group">
-                            <label>真实姓名:</label>
-                            <input type="text" class="form-control" name="realName" placeholder="输入姓名。">
-                        </div>
-                        <div class="form-group">
-                            <label>班级:</label>
-                            <input type="text" class="form-control" name="className" placeholder="输入班级。">
-                        </div>
-                    </div>
-                </form>
-                <!-- 模态框底部 -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-toggle="modal" id="registerButton" data-target="#Return" data-dismiss="modal">提交</button>
-                </div>
-
-                </div>
-                </div>
-                </div>
-
-                <!--登录模态框-->
-                <div class="modal fade" id="login">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-
-                            <!-- 模态框头部 -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">登录</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-
-                            <!-- 模态框主体 -->
-                            <form id="loginForm">
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label>账号:</label>
-                                        <input type="text" class="form-control" name="userName" placeholder="输入用户名。">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>密码:</label>
-                                        <input type="password" class="form-control" name="passWord" placeholder="输入密码。">
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- 模态框底部 -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-toggle="modal" id="loginButton" data-target="#Return" data-dismiss="modal">提交</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="Return">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-
-                            <!-- 模态框头部 -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Return</h4>
-                            </div>
-
-                            <!-- 模态框主体 -->
-                            <div class="modal-body" id="returnMsg">
-                            </div>
-
-                            <!-- 模态框底部 -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-dismiss="modal">确定</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <br/>
-                <br/>
-                <br/>
+<?php include('header.php');?>
+<div class="card bg-secondary text-white">
+    <div class="card-body">
+        <h4 class="card-title">每周一歌</h4>
+        <p class="card-text">对喜欢的歌进行投票，我们会选出名列前茅的歌曲进行排选。</p>
+        <button type="button" class="btn btn-primary btn-lg">进入</button>
+    </div>
+</div>
                 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
                 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
                 <script src="https://cdn.bootcss.com/popper.js/1.15.0/esm/popper.js"></script>
                 <!-- 包括所有已编译的插件 -->
                 <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.js"></script>
-                <script type="text/javascript">
-                    $( document ).ready( function () {
-                        $( "#registerButton" ).click( function () {
-                            $( "#returnMsg" ).html( "数据获取中，请耐心等待。" );
-                            var targetUrl = "/account/register.php";
-                            var data = $( "#registerForm" ).serialize();
-                            htmlobj = $.ajax( {
-                                type: 'post',
-                                url: targetUrl,
-                                cache: false,
-                                data: data,
-                                dataType: 'html',
-                                success: function ( data ) {
-                                    $( "#returnMsg" ).html( data );
-                                },
-                                error: function () {
-                                    $( "#returnMsg" ).html( "请求失败" );
-                                }
-                            } );
-                            $( "#returnMsg" ).html( htmlobj.responseText );
-                        } );
-                        $( "#loginButton" ).click( function () {
-                            $( "#returnMsg" ).html( "数据获取中，请耐心等待。" );
-                            var targetUrl = "/account/login.php";
-                            var data = $( "#loginForm" ).serialize();
-                            htmlobj = $.ajax( {
-                                type: 'post',
-                                url: targetUrl,
-                                cache: false,
-                                data: data,
-                                dataType: 'html',
-                                success: function ( data ) {
-                                    $( "#returnMsg" ).html( data );
-                                },
-                                error: function () {
-                                    $( "#returnMsg" ).html( "请求失败" );
-                                }
-                            } );
-                            $( "#returnMsg" ).html( htmlobj.responseText );
-                        } );
-                    } );
-                </script>
+                <script src="/js/mian.js"></script>
 </body>
 </html>
