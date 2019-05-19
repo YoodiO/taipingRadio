@@ -16,14 +16,6 @@
 </head>
 
 <body>
-    <?php include('header.php');?>
-    <div class="card bg-secondary text-white">
-        <div class="card-body">
-            <h4 class="card-title">每周一歌</h4>
-            <p class="card-text">对喜欢的歌进行投票，我们会选出名列前茅的歌曲进行排选。</p>
-            <button type="button" class="btn btn-primary btn-lg">进入</button>
-        </div>
-    </div>
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.15.0/esm/popper.js"></script>

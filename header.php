@@ -39,12 +39,12 @@ session_start();
             <form id="registerForm">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>账号:</label>
-                        <input type="text" class="form-control" name="userName" placeholder="输入用户名。">
+                        <label>用户名:</label>
+                        <input type="text" class="form-control" name="userName" placeholder="用户名以字母开头长度为5-16，允许字母数字下划线。">
                     </div>
                     <div class="form-group">
                         <label>密码:</label>
-                        <input type="password" class="form-control" name="passWord" placeholder="输入密码。">
+                        <input type="password" class="form-control" name="passWord" placeholder="密码以字母开头，长度在6~18字节之间，只能包含字母、数字和下划线。">
                     </div>
                     <div class="form-group">
                         <label>确认密码:</label>
@@ -52,7 +52,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label>真实姓名:</label>
-                        <input type="text" class="form-control" name="realName" placeholder="输入姓名。">
+                        <input type="text" class="form-control" name="realName" placeholder="姓名必须为中文。">
                     </div>
                     <div class="form-group">
                         <label>班级:</label>
@@ -84,7 +84,7 @@ session_start();
                         <form id="loginForm">
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label>账号:</label>
+                                    <label>用户名:</label>
                                     <input type="text" class="form-control" name="userName" placeholder="输入用户名。">
                                 </div>
                                 <div class="form-group">
