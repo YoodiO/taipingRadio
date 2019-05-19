@@ -1,5 +1,6 @@
 <!doctype html>
 <?php
+date_default_timezone_set("Asia/Shanghai");
 include( '../tls/conn.php' );
 $vote_id = $_GET[ 'vote_id' ];
 if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" ) ) {
@@ -28,7 +29,7 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
     <?php include('../header.php')?>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <?php if($row['end']=="false"){?>
+            <?php if($row['overTime']>date('Y-m-d')){?>
             <div class="alert alert-danger">
                 <strong>警告!</strong> 最多只能选择五个哦~
             </div>
@@ -64,12 +65,12 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
             </div>
             <br />
             <button type="button" class="btn btn-success btn-block">投票(制作中)</button>
-            <button type="button" class="btn btn-primary btn-block" onclick="javascript:history.back(-1);">返回</button>
+            <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
             <?php }else{?>
             <div class="alert alert-danger">
                 <strong>警告!</strong> 投票已结束。
             </div>
-            <button type="button" class="btn btn-primary btn-block" onclick="javascript:history.back(-1);">返回</button>
+            <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
             <?php }?>
         </div>
     </div>

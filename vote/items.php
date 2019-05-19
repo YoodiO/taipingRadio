@@ -18,6 +18,7 @@
 <body>
     <?php include('../header.php')?>
     <?php include('../tls/conn.php')?>
+    <?php date_default_timezone_set("Asia/Shanghai");?>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="alert alert-warning">
@@ -27,24 +28,29 @@
             if ( $res = $conn->query( "SELECT * FROM voting_items ORDER BY vote_id DESC" ) ) {
                 if ( $res->num_rows > 0 ) {
                     while ( $row = $res->fetch_assoc() ) {
-                        echo <<<EOF
-                <a href="content.php?vote_id={$row['vote_id']}">
-                    <div class="card bg-success text-white">
-                        <div class="card-body">{$row['title']}</div>
-                    </div> 
-                </a>
-EOF;
-                    }
+                        ?>
+            <?php if(date("Y-m-d")<$row['overTime']){?>
+            <div class="card text-white bg-success" onClick="window.location.href='content.php?vote_id=<?php echo $row['vote_id']?>'">
+                <?php }else{?>
+                <div class="card text-white bg-danger" onClick="window.location.href='content.php?vote_id=<?php echo $row['vote_id']?>'">
+                    <?php }?>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <?php echo $row['title']?>
+                        </h4>
+                        <p class="text-white">截止日期(<?php echo $row['overTime']?>)</p>
+                    </div>
+                </div>
+                <?php }
                 }
-            }
-            ?>
+            }?>
+            </div>
         </div>
-    </div>
-    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.15.0/esm/popper.js"></script>
-    <!-- 包括所有已编译的插件 -->
-    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.js"></script>
-    <script src="/js/main.js"></script>
+        <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+        <script src="https://cdn.bootcss.com/popper.js/1.15.0/esm/popper.js"></script>
+        <!-- 包括所有已编译的插件 -->
+        <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.js"></script>
+        <script src="/js/main.js"></script>
 </body>
 </html>
