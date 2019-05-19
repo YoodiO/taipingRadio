@@ -124,5 +124,4 @@ session_start();
             </div>
             <br/>
             <br/>
-            <br/>
 <!--header.php-->
