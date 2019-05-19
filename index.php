@@ -17,11 +17,14 @@
 
 <body>
     <?php include('header.php');?>
+    <div class="alert alert-danger">
+        <strong>警告!</strong> 请勿输入虚假信息。
+    </div>
     <div class="card bg-secondary text-white">
         <div class="card-body">
             <h4 class="card-title">每周一歌</h4>
             <p class="card-text">对喜欢的歌进行投票，我们会选出名列前茅的歌曲进行排选。</p>
-            <button type="button" class="btn btn-primary btn-lg">进入</button>
+            <a href="vote/items.php"><button type="button" class="btn btn-primary btn-lg">进入</button></a>
         </div>
     </div>
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
