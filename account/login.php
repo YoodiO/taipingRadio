@@ -12,7 +12,7 @@ if ( !preg_match( "/^[a-zA-Z][a-zA-Z0-9_]{4,15}$/", $userName ) ) {
 if ( !preg_match( "/^[a-zA-Z]\w{5,17}$/", $passWord ) ) {
     die( "密码不合法，规则：以字母开头，长度在6~18字节之间，只能包含字母、数字和下划线" );
 }
-if ( $res = $conn->query( "SELECT * FROM users WHERE userName=$userName AND password=$passWord" ) ) {
+if ( $res = $conn->query( "SELECT * FROM users WHERE userName='$userName' AND password='$passWord'" ) ) {
     $row = $res->fetch_assoc;
     setcookie( 'userName', $username, time() + 3600, "/", true );
     setcookie( 'realName', $row[ 'realName' ], time() + 3600, "/", true );
