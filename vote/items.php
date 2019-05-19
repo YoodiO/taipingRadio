@@ -26,7 +26,7 @@
         if ( $res->num_rows > 0 ) {
             while ( $row = $res->fetch_assoc() ) {
                 echo <<<EOF
-                <a href="content.php?{$row['vote_id']}"
+                <a href="content.php?vote_id={$row['vote_id']}"
                 <div class="card bg-success text-white">
                     <div class="card-body">{$row['title']}</div>
                 </div> 
