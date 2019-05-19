@@ -39,7 +39,6 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="1" name="checkBox[]"><?php echo $row['one'];?>
                           </label>
-                    
                     </div>
                 </div>
             </div>
@@ -49,7 +48,6 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="2" name="checkBox[]"><?php echo $row['two'];?>
                           </label>
-                    
                     </div>
                 </div>
             </div>
@@ -58,8 +56,7 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                     <div class="form-check">
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="3" name="checkBox[]"><?php echo $row['three'];?>
-                          </label>
-                    
+                        </label>
                     </div>
                 </div>
             </div>
@@ -69,7 +66,6 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="4" name="checkBox[]"><?php echo $row['four'];?>
                           </label>
-                    
                     </div>
                 </div>
             </div>
@@ -79,7 +75,6 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="5" name="checkBox[]"><?php echo $row['five'];?>
                           </label>
-                    
                     </div>
                 </div>
             </div>
@@ -89,7 +84,6 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="6" name="checkBox[]"><?php echo $row['six'];?>
                           </label>
-                    
                     </div>
                 </div>
             </div>
@@ -99,7 +93,6 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="7" name="checkBox[]"><?php echo $row['seven'];?>
                           </label>
-                    
                     </div>
                 </div>
             </div>
@@ -109,7 +102,6 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="8" name="checkBox[]"><?php echo $row['eight'];?>
                           </label>
-                    
                     </div>
                 </div>
             </div>
@@ -119,7 +111,6 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="9" name="checkBox[]"><?php echo $row['nine'];?>
                           </label>
-                    
                     </div>
                 </div>
             </div>
@@ -129,7 +120,6 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="10" name="checkBox[]"><?php echo $row['ten'];?>
                           </label>
-                    
                     </div>
                 </div>
             </div>
@@ -139,6 +129,9 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
             <?php }else{?>
             <div class="alert alert-danger">
                 <strong>警告!</strong> 投票已结束。
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:100%"></div>
+                </div>
             </div>
             <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
             <?php }?>
