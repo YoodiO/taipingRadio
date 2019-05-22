@@ -24,10 +24,11 @@ if ( !preg_match( "/([\x{4e00}-\x{9fa5}])/u", $realName ) ) {
 if ( !preg_match( "/([0-9\x{4e00}-\x{9fa5}0-9])/u", $className ) ) {
     die( "班级名不合法，规则：例如17计算机1。" );
 }
+$passWord=hash("SHA256",hash("md5",$passWord));
 if($conn->query( "INSERT INTO users(userName,passWord,realName,className) VALUES('$userName','$passWord','$realName','$className')" )){
     echo "注册成功。";
 }else{
-    echo "注册失败。";
+    echo "注册失败，可能是该账户已经存在。";
 }
 $conn->close();
 ?>

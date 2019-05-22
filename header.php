@@ -59,6 +59,9 @@ session_start();
                         <input type="text" class="form-control" name="className" placeholder="输入班级。">
                     </div>
                 </div>
+                <div class="alert alert-success">
+                    <strong>提示!</strong> 密码使用了两种Hash算法加密。
+                </div>
             </form>
             <!-- 模态框底部 -->
             <div class="modal-footer">
@@ -124,4 +127,4 @@ session_start();
             </div>
             <br/>
             <br/>
-<!--header.php-->
+            <!--header.php-->
