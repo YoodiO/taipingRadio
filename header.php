@@ -19,8 +19,8 @@ session_start();
             </div>
         </li>
         <?php }else{?>
-        <li class="nav-item"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button</li>
-            <li class="nav-item"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button</li>
+        <li class="nav-item"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button></li>
+            <li class="nav-item"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button></li>
             <?php }?>
         </ul>
     </nav>

@@ -30,9 +30,7 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <?php if($row['overTime']>date('Y-m-d')){?>
-            <div class="alert alert-danger">
-                <strong>警告!</strong> 最多只能选择五个哦~
-            </div>
+            <?php if(isset($_SESSION['userName'])){?>
             <div class="card bg-light text-dark">
                 <div class="card-body">
                     <div class="form-check">
@@ -47,7 +45,7 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                     <div class="form-check">
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="2" name="checkBox[]"><?php echo $row['two'];?>
-                          </label>
+                        </label>
                     </div>
                 </div>
             </div>
@@ -75,6 +73,8 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="5" name="checkBox[]"><?php echo $row['five'];?>
                           </label>
+                    
+
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                     <div class="form-check">
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="7" name="checkBox[]"><?php echo $row['seven'];?>
-                          </label>
+                        </label>
                     </div>
                 </div>
             </div>
@@ -102,6 +102,8 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input" value="8" name="checkBox[]"><?php echo $row['eight'];?>
                           </label>
+                    
+
                     </div>
                 </div>
             </div>
@@ -127,6 +129,9 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
             <button type="button" class="btn btn-success btn-block">投票(制作中)</button>
             <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
             <?php }else{?>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button>
+            <?php }}else{?>
             <div class="alert alert-danger">
                 <strong>警告!</strong> 投票已结束。
                 <div class="progress">
