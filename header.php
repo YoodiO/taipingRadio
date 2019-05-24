@@ -19,20 +19,24 @@ session_start();
             </div>
         </li>
         <?php }else{?>
-        <li class="nav-item"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button></li>
-            <li class="nav-item"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button></li>
-            <?php }?>
-        </ul>
-    </nav>
-    <!--注册模态框-->
-    <div class="modal fade" id="register">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+        <li class="nav-item">
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button>
+        </li>
+        <li class="nav-item">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button>
+        </li>
+        <?php }?>
+    </ul>
+</nav>
+<!--注册模态框-->
+<div class="modal fade" id="register">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
 
-                <!-- 模态框头部 -->
-                <div class="modal-header">
-                    <h4 class="modal-title">注册</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title">注册</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- 模态框主体 -->
@@ -68,63 +72,63 @@ session_start();
                 <button type="button" class="btn btn-success" data-toggle="modal" id="registerButton" data-target="#Return" data-dismiss="modal">提交</button>
             </div>
 
+        </div>
+    </div>
+</div>
+
+<!--登录模态框-->
+<div class="modal fade" id="login">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title">登录</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            </div>
-            </div>
 
-            <!--登录模态框-->
-            <div class="modal fade" id="login">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-
-                        <!-- 模态框头部 -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">登录</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <!-- 模态框主体 -->
-                        <form id="loginForm">
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label>用户名:</label>
-                                    <input type="text" class="form-control" name="userName" placeholder="输入用户名。">
-                                </div>
-                                <div class="form-group">
-                                    <label>密码:</label>
-                                    <input type="password" class="form-control" name="passWord" placeholder="输入密码。">
-                                </div>
-                            </div>
-                        </form>
-                        <!-- 模态框底部 -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-toggle="modal" id="loginButton" data-target="#Return" data-dismiss="modal">提交</button>
-                        </div>
-
+            <!-- 模态框主体 -->
+            <form id="loginForm">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>用户名:</label>
+                        <input type="text" class="form-control" name="userName" placeholder="输入用户名。">
+                    </div>
+                    <div class="form-group">
+                        <label>密码:</label>
+                        <input type="password" class="form-control" name="passWord" placeholder="输入密码。">
                     </div>
                 </div>
+            </form>
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-toggle="modal" id="loginButton" data-target="#Return" data-dismiss="modal">提交</button>
             </div>
-            <div class="modal fade" id="Return">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
 
-                        <!-- 模态框头部 -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Return</h4>
-                        </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Return">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
 
-                        <!-- 模态框主体 -->
-                        <div class="modal-body" id="returnMsg">
-                        </div>
-
-                        <!-- 模态框底部 -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal" id="returnSuccess">确定</button>
-                        </div>
-
-                    </div>
-                </div>
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title">Return</h4>
             </div>
-            <br/>
-            <br/>
-            <!--header.php-->
+
+            <!-- 模态框主体 -->
+            <div class="modal-body" id="returnMsg">
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" id="returnSuccess">确定</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<!--header.php-->

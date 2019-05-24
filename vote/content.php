@@ -32,156 +32,65 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
         <div class="container">
             <?php if($row['overTime']>date('Y-m-d')){?>
             <?php if(isset($_SESSION['userName'])){?>
-            <?php if($conn->query("SELECT * FROM voting_result WHERE userName='{$_SESSION['userName']}' AND vote_id='$vote_id'")->num_rows==0){?>
-            <form id="voteForm">
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="one" name="vote[one]">
-                            <label class="custom-control-label" for="one">
-                                <?php echo $row['one']?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="two" name="vote[two]">
-                            <label class="custom-control-label" for="two">
-                                <?php echo $row['two']?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="three" name="vote[three]">
-                            <label class="custom-control-label" for="three">
-                                <?php echo $row['three']?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="four" name="vote[four]">
-                            <label class="custom-control-label" for="four">
-                                <?php echo $row['four']?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="five" name="vote[five]">
-                            <label class="custom-control-label" for="five">
-                                <?php echo $row['five']?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="six" name="vote[six]">
-                            <label class="custom-control-label" for="six">
-                                <?php echo $row['six']?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="seven" name="vote[seven]">
-                            <label class="custom-control-label" for="seven">
-                                <?php echo $row['seven']?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="eight" name="vote[eight]">
-                            <label class="custom-control-label" for="eight">
-                                <?php echo $row['eight']?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="nine" name="vote[nine]">
-                            <label class="custom-control-label" for="nine">
-                                <?php echo $row['nine']?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-light text-break">
-                    <div class="card-body">
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="ten" name="vote[ten]">
-                            <label class="custom-control-label" for="ten">
-                                <?php echo $row['ten']?>
-                            </label>
-                        </div>
-                    </div>
-                </div><input type="hidden" name="vote_id" value="<?php echo $vote_id?>">
-            </form>
-            <br/>
-            <button type="button" class="btn btn-success btn-block" id="voteButton" data-toggle="modal" data-target="#Return">投票</button>
-            <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
-            <?php }else{?>
+                <?php if($conn->query("SELECT * FROM voting_result WHERE userName='{$_SESSION['userName']}' AND vote_id='$vote_id'")->num_rows==0){?>
+                    <?php include('voteForm.php');?>
+                <?php }else{?>
             <div class="alert alert-danger">
                 <strong>警告!</strong> 您已经投过票了！
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['one'];?></h5>
+                    
                 </div>
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['two'];?></h5>
                 </div>
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['three'];?></h5>
                 </div>
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['four'];?></h5>
                 </div>
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['five'];?></h5>
                 </div>
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['six'];?></h5>
                 </div>
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['seven'];?></h5>
                 </div>
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['eight'];?></h5>
                 </div>
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['nine'];?></h5>
                 </div>
             </div>
             <div class="card bg-light text-break">
                 <div class="card-body">
+                    <h5 class="card-title"><?php echo $row['ten'];?></h5>
                 </div>
             </div>
+            <br />
+            <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
             <?php }?>
             <?php }else{?>
             <div class="alert alert-danger">

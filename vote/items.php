@@ -38,7 +38,8 @@
                         <h4 class="card-title">
                             <?php echo $row['title']?>
                         </h4>
-                        <p class="text-white">截止日期(<?php echo $row['overTime']?>)</p>
+                        <p class="text-white">截止日期(
+                            <?php echo $row['overTime']?>)</p>
                     </div>
                 </div>
                 <?php }
