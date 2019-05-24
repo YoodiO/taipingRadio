@@ -41,72 +41,60 @@ if ( $result = $conn->query( "SELECT COUNT(*) as ten FROM voting_result WHERE te
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['one'];?>
+            <?php echo $row['one'];echo $oneAll."/".$allUser;?>
         </h5>
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $oneAll/$allUser*100;?>%">
-                <?php echo $oneAll."/".$allUser;?>
-            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $oneAll/$allUser*100;?>%"></div>
         </div>
     </div>
 </div>
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['two'];?>
+            <?php echo $row['two'];echo $twoAll."/".$allUser;?>
         </h5>
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $twoAll/$allUser*100;?>%">
-                <?php echo $twoAll."/".$allUser;?>
-            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $twoAll/$allUser*100;?>%"></div>
         </div>
     </div>
 </div>
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['three'];?>
+            <?php echo $row['three'];echo $threeAll."/".$allUser;?>
         </h5>
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $threeAll/$allUser*100;?>%">
-                <?php echo $threeAll."/".$allUser;?>
-            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $threeAll/$allUser*100;?>%"></div>
         </div>
     </div>
 </div>
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['four'];?>
+            <?php echo $row['four'];php echo $fourAll."/".$allUser;?>
         </h5>
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $fourAll/$allUser*100;?>%">
-                <?php echo $fourAll."/".$allUser;?>
-            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $fourAll/$allUser*100;?>%"></div>
         </div>
     </div>
 </div>
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['five'];?>
+            <?php echo $row['five'];php echo $fiveAll."/".$allUser;?>
         </h5>
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $fiveAll/$allUser*100;?>%">
-                <?php echo $fiveAll."/".$allUser;?>
-            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $fiveAll/$allUser*100;?>%"></div>
         </div>
     </div>
 </div>
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['six'];?>
+            <?php echo $row['six'];?><?php echo $sixAll."/".$allUser;?>
         </h5>
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $sixAll/$allUser*100;?>%">
-                <?php echo $sixAll."/".$allUser;?>
-            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $sixAll/$allUser*100;?>%"></div>
         </div>
     </div>
 </div>
@@ -125,36 +113,30 @@ if ( $result = $conn->query( "SELECT COUNT(*) as ten FROM voting_result WHERE te
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['eight'];?>
+            <?php echo $row['eight'];?><?php echo $eightAll."/".$allUser;?>
         </h5>
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $eightAll/$allUser*100;?>%">
-                <?php echo $eightAll."/".$allUser;?>
-            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $eightAll/$allUser*100;?>%"></div>
         </div>
     </div>
 </div>
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['nine'];?>
+            <?php echo $row['nine'];?><?php echo $nineAll."/".$allUser;?>
         </h5>
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $nineAll/$allUser*100;?>%">
-                <?php echo $nineAll."/".$allUser;?>
-            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $nineAll/$allUser*100;?>%"></div>
         </div>
     </div>
 </div>
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['ten'];?>
+            <?php echo $row['ten'];?><?php echo $tenAll."/".$allUser;?>
         </h5>
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $tenAll/$allUser*100;?>%">
-                <?php echo $tenAll."/".$allUser;?>
-            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $tenAll/$allUser*100;?>%"></div>
         </div>
     </div>
 </div>
