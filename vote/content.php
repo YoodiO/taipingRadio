@@ -27,110 +27,168 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
 
 <body>
     <?php include('../header.php')?>
+
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <?php if($row['overTime']>date('Y-m-d')){?>
             <?php if(isset($_SESSION['userName'])){?>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="1" name="checkBox[]"><?php echo $row['one'];?>
-                          </label>
+            <?php if($conn->query("SELECT * FROM voting_result WHERE userName='{$_SESSION['userName']}' AND vote_id='$vote_id'")->num_rows==0){?>
+            <form id="voteForm">
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="one" name="vote[one]">
+                            <label class="custom-control-label" for="one">
+                                <?php echo $row['one']?>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="2" name="checkBox[]"><?php echo $row['two'];?>
-                        </label>
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="two" name="vote[two]">
+                            <label class="custom-control-label" for="two">
+                                <?php echo $row['two']?>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="3" name="checkBox[]"><?php echo $row['three'];?>
-                        </label>
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="three" name="vote[three]">
+                            <label class="custom-control-label" for="three">
+                                <?php echo $row['three']?>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="4" name="checkBox[]"><?php echo $row['four'];?>
-                          </label>
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="four" name="vote[four]">
+                            <label class="custom-control-label" for="four">
+                                <?php echo $row['four']?>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="5" name="checkBox[]"><?php echo $row['five'];?>
-                          </label>
-                    
-
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="five" name="vote[five]">
+                            <label class="custom-control-label" for="five">
+                                <?php echo $row['five']?>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="6" name="checkBox[]"><?php echo $row['six'];?>
-                          </label>
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="six" name="vote[six]">
+                            <label class="custom-control-label" for="six">
+                                <?php echo $row['six']?>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="7" name="checkBox[]"><?php echo $row['seven'];?>
-                        </label>
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="seven" name="vote[seven]">
+                            <label class="custom-control-label" for="seven">
+                                <?php echo $row['seven']?>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="8" name="checkBox[]"><?php echo $row['eight'];?>
-                          </label>
-                    
-
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="eight" name="vote[eight]">
+                            <label class="custom-control-label" for="eight">
+                                <?php echo $row['eight']?>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="9" name="checkBox[]"><?php echo $row['nine'];?>
-                          </label>
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="nine" name="vote[nine]">
+                            <label class="custom-control-label" for="nine">
+                                <?php echo $row['nine']?>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light text-dark">
-                <div class="card-body">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="10" name="checkBox[]"><?php echo $row['ten'];?>
-                          </label>
+                <div class="card bg-light text-break">
+                    <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="ten" name="vote[ten]">
+                            <label class="custom-control-label" for="ten">
+                                <?php echo $row['ten']?>
+                            </label>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div><input type="hidden" name="vote_id" value="<?php echo $vote_id?>">
+            </form>
             <br/>
-            <button type="button" class="btn btn-success btn-block">投票(制作中)</button>
+            <button type="button" class="btn btn-success btn-block" id="voteButton" data-toggle="modal" data-target="#Return">投票</button>
             <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
             <?php }else{?>
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button>
+            <div class="alert alert-danger">
+                <strong>警告!</strong> 您已经投过票了！
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card bg-light text-break">
+                <div class="card-body">
+                </div>
+            </div>
+            <?php }?>
+            <?php }else{?>
+            <div class="alert alert-danger">
+                <strong>警告!</strong> 您还没有登录。
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button>
+            </div>
             <?php }}else{?>
             <div class="alert alert-danger">
                 <strong>警告!</strong> 投票已结束。
@@ -150,3 +208,4 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
     <script src="/js/main.js"></script>
 </body>
 </html>
+<?php $conn->close();?>

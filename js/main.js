@@ -52,6 +52,25 @@ $("#loginOut").click(function () {
         }
     });
 });
-$("#returnSuccess").click(function(){
+$("#voteButton").click(function () {
+    $("#returnMsg").html("数据获取中，请耐心等待。");
+    var targetUrl = "/vote/insert.php";
+    var data = $("#voteForm").serialize();
+    htmlobj = $.ajax({
+        type: 'post',
+        url: targetUrl,
+        cache: false,
+        data: data,
+        dataType: 'html',
+        success: function (data) {
+            $("#returnMsg").html(data);
+        },
+        error: function () {
+            $("#returnMsg").html("请求失败");
+        }
+    });
+    $("#returnMsg").html(htmlobj.responseText);
+});
+$("#returnSuccess").click(function () {
     window.location.reload();
-})
+});
