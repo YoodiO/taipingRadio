@@ -71,7 +71,7 @@ if ( $result = $conn->query( "SELECT COUNT(*) as ten FROM voting_result WHERE te
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['four'];php echo $fourAll."/".$allUser;?>
+            <?php echo $row['four'];echo $fourAll."/".$allUser;?>
         </h5>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $fourAll/$allUser*100;?>%"></div>
@@ -81,7 +81,7 @@ if ( $result = $conn->query( "SELECT COUNT(*) as ten FROM voting_result WHERE te
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['five'];php echo $fiveAll."/".$allUser;?>
+            <?php echo $row['five'];echo $fiveAll."/".$allUser;?>
         </h5>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $fiveAll/$allUser*100;?>%"></div>
@@ -91,7 +91,7 @@ if ( $result = $conn->query( "SELECT COUNT(*) as ten FROM voting_result WHERE te
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['six'];?><?php echo $sixAll."/".$allUser;?>
+            <?php echo $row['six'];echo $sixAll."/".$allUser;?>
         </h5>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $sixAll/$allUser*100;?>%"></div>
@@ -113,7 +113,7 @@ if ( $result = $conn->query( "SELECT COUNT(*) as ten FROM voting_result WHERE te
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['eight'];?><?php echo $eightAll."/".$allUser;?>
+            <?php echo $row['eight'];echo $eightAll."/".$allUser;?>
         </h5>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $eightAll/$allUser*100;?>%"></div>
@@ -123,7 +123,7 @@ if ( $result = $conn->query( "SELECT COUNT(*) as ten FROM voting_result WHERE te
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['nine'];?><?php echo $nineAll."/".$allUser;?>
+            <?php echo $row['nine'];echo $nineAll."/".$allUser;?>
         </h5>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $nineAll/$allUser*100;?>%"></div>
@@ -133,7 +133,7 @@ if ( $result = $conn->query( "SELECT COUNT(*) as ten FROM voting_result WHERE te
 <div class="card bg-light text-break">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $row['ten'];?><?php echo $tenAll."/".$allUser;?>
+            <?php echo $row['ten'];echo $tenAll."/".$allUser;?>
         </h5>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?php echo $tenAll/$allUser*100;?>%"></div>
