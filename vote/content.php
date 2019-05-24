@@ -20,9 +20,7 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
       <![endif]-->
-    <title>
-        <?php echo $row['title']."-taipingRaido";?>
-    </title>
+    <title><?php echo $row['title']."-taipingRaido";?></title>
 </head>
 
 <body>
@@ -30,82 +28,27 @@ if ( $res = $conn->query( "SELECT * FROM voting_items WHERE vote_id='$vote_id'" 
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <?php if($row['overTime']>date('Y-m-d')){?>
-            <?php if(isset($_SESSION['userName'])){?>
-                <?php if($conn->query("SELECT * FROM voting_result WHERE userName='{$_SESSION['userName']}' AND vote_id='$vote_id'")->num_rows==0){?>
-                    <?php include('voteForm.php');?>
-                <?php }else{?>
-            <div class="alert alert-danger">
-                <strong>警告!</strong> 您已经投过票了！
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['one'];?></h5>
-                    
-                </div>
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['two'];?></h5>
-                </div>
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['three'];?></h5>
-                </div>
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['four'];?></h5>
-                </div>
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['five'];?></h5>
-                </div>
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['six'];?></h5>
-                </div>
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['seven'];?></h5>
-                </div>
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['eight'];?></h5>
-                </div>
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['nine'];?></h5>
-                </div>
-            </div>
-            <div class="card bg-light text-break">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['ten'];?></h5>
-                </div>
-            </div>
-            <br />
-            <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
-            <?php }?>
-            <?php }else{?>
+            <?php
+            if ( $row[ 'overTime' ] > date( 'Y-m-d' ) ) {
+                if ( isset( $_SESSION[ 'userName' ] ) ) {
+                    if ( $conn->query( "SELECT * FROM voting_result WHERE userName='{$_SESSION['userName']}' AND vote_id='$vote_id'" )->num_rows == 0 ) {
+                        include( 'voteForm.php' );
+                    } else {
+                        include( 'voteResult.php' );
+                    }
+                } else {
+                    ?>
             <div class="alert alert-danger">
                 <strong>警告!</strong> 您还没有登录。
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#register">注册</button>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">登录</button>
             </div>
-            <?php }}else{?>
+            <?php }
+            }else{?>
             <div class="alert alert-danger">
                 <strong>警告!</strong> 投票已结束。
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:100%"></div>
-                </div>
             </div>
-            <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='items.php'">返回</button>
+            <?php include('voteResult.php');?>
             <?php }?>
         </div>
     </div>
